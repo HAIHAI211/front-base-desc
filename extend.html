@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extend</title>
+</head>
+<body>
+<script>
+    function Parent () {
+        this.name = 'Parent'
+        this.age = [1, 2, 3]
+    }
+
+    function Child () {
+
+    }
+
+    Child.prototype = new Parent()
+
+    const child1 = new Child()
+    const child2 = new Child()
+
+
+
+    // 这两种方式不会产生属性公用的影响，因为会在child1本身上添加属性
+    // child1.name = 'child1'
+    // child1.age = [4, 5, 6]
+
+    // 这种方式会对原型链产生影响
+    child1.age.push(4)
+
+
+</script>
+</body>
+</html>
