@@ -1,5 +1,5 @@
 # front-base-desc
-原型链
+#原型链
     创建对象有几种方法
         1、字面量{}或new Object
         2、显式的构造函数
@@ -34,7 +34,7 @@
             return typeof result === 'object' ? result: o
         }
 
-面向对象
+#面向对象
     类与实例
         类的声明
         生成实例
