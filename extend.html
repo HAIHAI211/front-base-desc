@@ -30,6 +30,32 @@
     child1.age.push(4)
 
 
+    // const arr = [1, 2, 3]
+    // console.log(arr.constructor, arr.__proto__.constructor) // obj.constructor === obj.__proto__.constructor
+
+
+    /*
+    * 组合继承
+    * */
+    function Parent1 () {
+        this.name = 'parent1'
+    }
+
+    function Child1 () {
+        Parent1.call(this)
+        this.age = 10
+    }
+    // Child1.prototype = Parent1.prototype // 弊端是child1的实例无法判断自己的直接父类是谁
+    Child1.prototype = Object.create(Parent1.prototype)
+    Child1.prototype.constructor = Child1
+    const c1 = new Child1()
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
